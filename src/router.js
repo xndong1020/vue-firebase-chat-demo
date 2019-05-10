@@ -11,15 +11,21 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
-  ]
+      path: '/chat',
+      name: 'chat',
+      props: true,
+      beforeEnter: (to, from, next) => {
+        const {
+          params: { name },
+        } = to
+        // if name is not set, then redirect user to home screen
+        if (!name) next({ name: 'home' })
+        next()
+      },
+      component: () => import('./views/Chat.vue'),
+    },
+  ],
 })

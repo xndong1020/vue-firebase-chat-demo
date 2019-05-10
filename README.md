@@ -1,5 +1,12 @@
 # firebase-chat
 
+## demo website
+[demo website](https://fir-chat-a4937.firebaseapp.com/chat)
+
+![index](docs/images/index.jpg)
+
+![Chat](docs/images/chat.jpg)
+
 ## Project setup
 ```
 npm install
@@ -24,6 +31,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
